@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # boilerplate-react-functional-public
 
 In this app we will be making a Word and Character counter app.
@@ -18,3 +19,6 @@ Apply the fontSize property to the textarea element.
 
 Demo video:-
 <video src="https://d3dyfaf3iutrxo.cloudfront.net/general/upload/e449406acecb4a1186ae9cc77a55933f.mp4" controls autoplay muted>
+=======
+# react-boiler-plate
+>>>>>>> ca497208b0622e9a118a27b0747e223e6927c476
