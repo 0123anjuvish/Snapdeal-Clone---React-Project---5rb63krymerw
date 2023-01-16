@@ -1,7 +1,8 @@
 import React from "react";
 import img1 from '../Images/img2.png';
 import { FaMobileAlt } from "react-icons/fa";
-import { FaSearch } from "react-icons/fa";
+import { FaSearch,FaUserCircle,FaCartArrowDown } from "react-icons/fa";
+import { Link } from "react-router-dom";
 //import {HiOutlineShoppingCart } from "react-icons/fa";
 //import { FaUserCircle } from "react-icons/fa";
 const Header = ()=>{
@@ -37,11 +38,15 @@ const Header = ()=>{
             <FaSearch />
         Search</button>
     
-    <div className="cart">Add to Cart 
-    {/* <HiOutlineShoppingCart /> */}
+    <div className="cart">
+    <Link to="/cart">Add to Cart 
+    <FaCartArrowDown />
+    </Link> 
     </div>
-    <div className="signin">Sign In 
-    {/* //<FaUserCircle /> */}
+    <div className="signin">
+       <Link to="/account">Sign In 
+    <FaUserCircle />
+    </Link> 
     </div>
     </div>
 </div>
