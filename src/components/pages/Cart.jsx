@@ -1,66 +1,77 @@
-// import React from "react";
-// import { FaMobileAlt } from "react-icons/fa";
-// import { FaSearch } from "react-icons/fa";
-// //import {HiOutlineShoppingCart } from "react-icons/fa";
-// //import { FaUserCircle } from "react-icons/fa";
-// const Cart = ()=>{
-//     return(
-// <>
-// <div className="">
-//   hello catalog
-// </div>
-// </>
-//     )
-// }
-// export default Cart;
+import * as React from "react";
+import "./product.css";
+import { styled } from "@mui/material/styles";
+import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import  { useEffect, useState } from 'react';
+import Login from '../pages/Login';
+import img2 from "../../Images/c2.jpg";
+import img8 from "../../Images/ca1.jpg";
+import img3 from '../../Images/WF.jpg';
+import img7 from '../../Images/mens.jpg';
+import img4 from '../../Images/H&K.jpg';
+import img5 from '../../Images/kids.jpg';
+import img6 from '../../Images/Beauty.jpg';
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import Divider from "@mui/material/Divider";
+import ListItemText from "@mui/material/ListItemText";
+import ListItemAvatar from "@mui/material/ListItemAvatar";
+import Avatar from "@mui/material/Avatar";
 
-import React, { useState, useEffect } from "react";
-import "./cart.css";
+import Paper from "@mui/material/Paper";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+// import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
+// import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
+import { Input, Stack } from "@mui/material";
+import Carousel from "./Carousel";
+import ProductItem from "../reuse/ProductItem";
+import Pagination from '@mui/material/Pagination';
+// using stepper>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
 
-const Cart = ({ cart, setCart, handleChange }) => {
-  const [price, setPrice] = useState(0);
+ const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: "center",
+  color: theme.palette.text.secondary,
+}));
 
-  const handleRemove = (id) => {
-    const arr = cart.filter((item) => item.id !== id);
-    setCart(arr);
-    handlePrice();
-  };
 
-  const handlePrice = () => {
-    let ans = 0;
-    cart.map((item) => (ans += item.amount * item.price));
-    setPrice(ans);
-  };
+export default function AlignItemsList() {
+ 
+  
 
-  useEffect(() => {
-    handlePrice();
-  });
-
+ 
+ 
   return (
-    <article>
-      {cart.map((item) => (
-        <div className="cart_box" key={item.id}>
-          <div className="cart_img">
-            <img src={item.img} alt="" />
-            <p>{item.title}</p>
-          </div>
-          <div>
-            <button onClick={() => handleChange(item, 1)}>+</button>
-            <button>{item.amount}</button>
-            <button onClick={() => handleChange(item, -1)}>-</button>
-          </div>
-          <div>
-            <span>{item.price}</span>
-            <button onClick={() => handleRemove(item.id)}>Remove</button>
-          </div>
-        </div>
-      ))}
-      <div className="total">
-        <span>Total Price of your Cart</span>
-        <span>Rs - {price}</span>
-      </div>
-    </article>
+    <>
+   <Box sx={{ flexGrow: 1, padding: 7 }} className="gridbox">
+    <Grid container  sx={{minHeight:60 , padding:2,backgroundColor:"green",marginTop:"14px"}}></Grid>
+      <Grid container divider={<Divider orientation="vertical" flexItem />} sx={{minHeight:250 , padding:4}}>
+      <Grid Item xs={6 }>
+      <Stack direction="row">
+        <Avatar src={img5} variant="square" margin="20px" sx={{height:200,width:180 }}></Avatar>
+        <Typography padding={2}>POWAFORCE Steel Kitchen Press 12 pc Jaalis for Murukku/Cookies/Noodles/Indian</Typography>
+      </Stack>
+      </Grid>
+      <Grid Item xs={6}>
+        <Stack direction="row">
+          <Typography>Your Order 3 Items
+You Pay: Rs. 754
+</Typography>
+<Button size="large" sx={{backgroundColor:"red" , height:"50px",minWidth:"200px"}}>Proceed to Checkout</Button>
+<Button size="large" sx={{backgroundColor:"black", height:"50px",minWidth:"200px"}}>Veiw Cart</Button>
+        </Stack>
+      </Grid>
+      
+      </Grid>
+      </Box>
+    </>
   );
-};
-
-export default Cart;
+}

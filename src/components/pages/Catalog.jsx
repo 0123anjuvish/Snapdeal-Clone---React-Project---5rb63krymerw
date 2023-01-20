@@ -8,8 +8,11 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import  { useEffect, useState } from 'react';
-import img2 from "../../Images/img1.png";
-import img3 from '../../Images/mens.jpg';
+import Login from '../pages/Login';
+import img2 from "../../Images/c2.jpg";
+import img8 from "../../Images/ca1.jpg";
+import img3 from '../../Images/WF.jpg';
+import img7 from '../../Images/mens.jpg';
 import img4 from '../../Images/H&K.jpg';
 import img5 from '../../Images/kids.jpg';
 import img6 from '../../Images/Beauty.jpg';
@@ -19,16 +22,14 @@ import Divider from "@mui/material/Divider";
 import ListItemText from "@mui/material/ListItemText";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
 import Avatar from "@mui/material/Avatar";
-import { useTheme } from "@mui/material/styles";
-import MobileStepper from "@mui/material/MobileStepper";
+
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
-import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
+// import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
+// import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import { Input, Stack } from "@mui/material";
-import { Form } from "react-router-dom";
-import { Margin } from "@mui/icons-material";
+import Carousel from "./Carousel";
 import ProductItem from "../reuse/ProductItem";
 import Pagination from '@mui/material/Pagination';
 // using stepper>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
@@ -61,26 +62,19 @@ export default function AlignItemsList() {
     
      [] );
 
-// React.useEffect( async () =>{
-//   const url = `https://content.newtonschool.co/v1/pr/63b6c911af4f30335b4b3b89/products`;
-//  const response = await fetch(url);
-//  const data = await response.json();
-//  setList(data);
-//  setLength(data.Length);
-// },[]);
-  console.log(itemList[2],"mkkkkkkkkkkkkk");
+
   
   const [page, setPage] = React.useState(0);
   const [itemLength, setLength] = React.useState(1);
   const handleChange = (event, value) => {
-    setPage(value+3);
+    setPage(value);
   }
   return (
     <>
       <Box sx={{ flexGrow: 1, padding: 3 }} className="gridbox">
         <Grid container spacing={2} sx={{}}>
-          <Grid item xs={3} sx={{ height: "400px" }}>
-            <Item sx={{ maxWidth: 400, bgcolor: "background.paper" }}>
+          <Grid item xs={3} sx={{ Maxheight: "50px" }}>
+            <Item sx={{ maxWidth: 280, bgcolor: "background.paper" }}>
               <List
                 sx={{
                   width: "100%",
@@ -93,32 +87,32 @@ export default function AlignItemsList() {
                   <ListItemAvatar>
                     <Avatar
                       alt="Remy Sharp"
-                      src="https://unsplash.com/photos/YGmk9UZMdZg"
+                      src={img3}
                     />
                   </ListItemAvatar>
                   <ListItemText primary="Women's Fashion" />
                 </ListItem>
                 <ListItem>
                   <ListItemAvatar>
-                    <Avatar alt="Remy Sharp" src="" />
+                    <Avatar alt="Remy Sharp" src={img7} />
                   </ListItemAvatar>
                   <ListItemText primary="Men's Fashion" />
                 </ListItem>
                 <ListItem>
                   <ListItemAvatar>
-                    <Avatar alt="Remy Sharp" src="" />
+                    <Avatar alt="Remy Sharp" src={img4} />
                   </ListItemAvatar>
                   <ListItemText primary="Home & Kitchen" />
                 </ListItem>
                 <ListItem>
                   <ListItemAvatar>
-                    <Avatar alt="Remy Sharp" src="" />
+                    <Avatar alt="Remy Sharp" src={img5} />
                   </ListItemAvatar>
                   <ListItemText primary="Toys, Kids' Fashion & more" />
                 </ListItem>
                 <ListItem>
                   <ListItemAvatar>
-                    <Avatar alt="Remy Sharp" src="" />
+                    <Avatar alt="Remy Sharp" src={img6} />
                   </ListItemAvatar>
                   <ListItemText primary="Beauty, Health &amp; Daily Needs" />
                 </ListItem>
@@ -167,45 +161,42 @@ export default function AlignItemsList() {
             <Grid item xs={12} sx={{ height: "400px" }}>
             <Grid container spacing={2} sx={{}}>
 
-            
+               
               <Grid item xs={9} sx={{ height: "400px" }}>
-              <Item sx={{ height: "300px" }}></Item>
+              
+              <Item sx={{ height: "300px" }}><Avatar src={img8} variant="square" sx={{height:306,width:710}}></Avatar></Item>
               </Grid>
-              <Grid item xs={3} sx={{ height: "400px" }}>
-                <Item sx={{ height: "300px", width: "100%" }}>
-                  <Card sx={{ maxWidth: 345, minHeight: 300 }}>
+              <Grid item xs={3} sx={{ height: "500px" }}>
+               {/* // <Item sx={{ height: "400px", width: "100%" }}> */}
+                  <Card sx={{ maxWidth: 345,height:"315px" }}>
                     <CardMedia
                       sx={{ height: 140 }}
                       image={img2}
-                      title="green iguana"
+                     
                     />
                     <CardContent className="cardcontent">
-                      <Typography variant="body2" color="text.secondary">
-                        Login to your Snapdeal Account
+                   
+                      <Typography variant="body2" color="text.secondary" margin="13px" marginLeft="32px">
+                        Login to your Account
                       </Typography>
-                      <Button
-                        size="small"
-                        variant="contained"
-                        sx={{ backgroundColor: "black" }}
-                      >
-                        Login
-                      </Button>
+                      
+                     
+                      <Login />
                     </CardContent>
-                    <CardActions>
-                      <Stack direction="row" spacing={7}>
-                        new user?<Button size="small"> Register</Button>
-                        <Button size="small" variant="contained">
-                          Next
-                        </Button>
+                    <CardActions> <h7> new user?</h7>
+                      <Stack direction="row" spacing={5} padding="1rem">
+                      <Button > Register</Button>
+                        
                       </Stack>
                     </CardActions>
                   </Card>
-                </Item>
+                {/* </Item> */}
               </Grid>
             </Grid>
             </Grid>
-            <Grid item xs={12} sx={{ height: "200px" }} className="trend">TRENDING PRODUCTS
-            <Item sx={{ height: "430px", padding:2 }} className=""> 
+            <Grid item xs={12} sx={{ height: "200px" }} className="trend">
+              <Typography marginLeft={8}>TRENDING PRODUCTS</Typography>
+            <Item sx={{ height: "370px", padding:2 }} className=""> 
             <Stack direction={"row"} spacing={2}>
 
               {/* {[1,2,3].map((item)=>(

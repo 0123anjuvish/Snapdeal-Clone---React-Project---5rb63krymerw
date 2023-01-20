@@ -1,5 +1,7 @@
 .cardcontent{
-    background-color: aqua ;
+   
+    margin-top: 1px;
+
 }
 .gridbox {
     padding-top: 100px !important;
@@ -7,4 +9,7 @@
     -webkit-flex-grow: 1;
     -ms-flex-positive: 1;
     flex-grow: 1;
+}
+.tyLogin{
+    margin:0;
 }
