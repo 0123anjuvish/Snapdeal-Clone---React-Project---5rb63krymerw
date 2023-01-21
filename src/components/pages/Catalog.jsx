@@ -1,5 +1,5 @@
 import * as React from "react";
-import "./product.css";
+//import "./product.css";
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
@@ -22,14 +22,14 @@ import Divider from "@mui/material/Divider";
 import ListItemText from "@mui/material/ListItemText";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
 import Avatar from "@mui/material/Avatar";
-
+import Footer from "../reuse/footer";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 // import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 // import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import { Input, Stack } from "@mui/material";
-import Carousel from "./Carousel";
+
 import ProductItem from "../reuse/ProductItem";
 import Pagination from '@mui/material/Pagination';
 // using stepper>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
@@ -164,7 +164,7 @@ export default function AlignItemsList() {
                
               <Grid item xs={9} sx={{ height: "400px" }}>
               
-              <Item sx={{ height: "300px" }}><Avatar src={img8} variant="square" sx={{height:306,width:710}}></Avatar></Item>
+              {/* <Item sx={{ height: "300px" }}><Avatar src={img8} variant="square" sx={{height:306,width:710}}></Avatar></Item> */}
               </Grid>
               <Grid item xs={3} sx={{ height: "500px" }}>
                {/* // <Item sx={{ height: "400px", width: "100%" }}> */}
@@ -219,7 +219,7 @@ export default function AlignItemsList() {
             
             </Grid>
           </Grid>
-
+          <Footer />
         
         </Grid>
       </Box>

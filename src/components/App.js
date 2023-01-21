@@ -17,14 +17,14 @@ const App = () => {
     <div id="main">
       <BrowserRouter>
       <Header/>
-     <Cart />
+     {/* <Cart /> */}
       <Routes>
    
-      {/* <Route exact path = "/" element={<Catalog/>} > </Route> */}
+      <Route exact path = "/" element={<Catalog/>} > </Route>
       <Route exact path = "/cart" element={<Cart/>} > </Route>
-      {/* <Route exact path = "/product/:id" element={<Product/>} > </Route>
-      <Route exact path = "/payment" element={<Payment/>} > </Route> */}
-      {/* <Route exact path = "/account" element={<Account/>} > </Route> */}
+      <Route exact path = "/product/:id" element={<Product/>} > </Route>
+      <Route exact path = "/payment" element={<Payment/>} > </Route> 
+       <Route exact path = "/account" element={<Account/>} > </Route>
       </Routes>
       </BrowserRouter>
     </div>

@@ -24,12 +24,37 @@ const Item = styled(Paper)(({ theme }) => ({
 
 export default function ProductItem(props) {
   // using stepper>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-  console.log(props);
+
+  const handleClick=(id) =>{
+    var quantity =0;
+ quantity= localStorage.getItem(id)||0;
+console.log(localStorage.getItem(id));
+    quantity= parseInt(quantity,10)+1;
+    localStorage.setItem(id,quantity);
+  
+    var ids = localStorage.getItem("ids")
+    if(isNaN(ids)){
+      ids = JSON.parse(ids)
+   
+    }
+    else{
+      ids=[];
+    }
+          console.log(ids)
+   
+    if(!ids.includes(id)){
+      ids.push(id);
+    }
+    console.log(ids);
+    localStorage.setItem("ids",JSON.stringify(ids))
+  }
+ 
  return (
     <>
       <Box sx={{ flexGrow: 1, }} className="">
-      <Link to ={`/product/${props.pro?.id}`}>
+      
                   <Card sx={{ maxWidth: 300, minHeight: 350,maxHeight:350 }}>
+                  <Link to ={`/product/${props.pro?.id}`}>
                     <Stack justifyContent="center" alignItems= "center">
 
                    
@@ -45,16 +70,16 @@ export default function ProductItem(props) {
                       </Typography>
                       <Rating name="read-only" value= {parseFloat(props.pro?.rating.rate)} readOnly precision={0.5}  />
                     </Stack>
-                   
+                    </Link>
                       <Stack direction="row" spacing={0} justifyContent="space-between"marginRight={1}>
                        <Button size="small">  {props.pro?.price}$</Button>
-                        <Button size="small" variant="contained" onClick={() => handleClick(item)}>
+                        <Button size="small" variant="contained" onClick={() => handleClick(props.pro?.id)}>
                          Add
                         </Button>
                       </Stack>
                    
                   </Card>
-                  </Link>
+                 
       </Box>
       
     </>

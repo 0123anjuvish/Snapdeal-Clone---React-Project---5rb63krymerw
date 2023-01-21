@@ -134,7 +134,7 @@ body{
     margin:0.5rem;
     width: 135px;
     margin-left:50px;
-    color:white;
+    color:white !important;
 }
 .carticon{
     padding:12px;

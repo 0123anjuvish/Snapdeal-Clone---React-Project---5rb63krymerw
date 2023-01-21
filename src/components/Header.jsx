@@ -8,7 +8,7 @@ import { Stack } from "@mui/material";
 //import Clck from "./reuse/Clickevent";
 //import {HiOutlineShoppingCart } from "react-icons/fa";
 //import { FaUserCircle } from "react-icons/fa";
-const Header = ({ setShow, size }) => {
+const Header = () => {
   return (
     <>
       <div className="navbar-header">
@@ -32,7 +32,7 @@ const Header = ({ setShow, size }) => {
         </section>
         <div className="main-navbar">
           <div className="logo">
-            {/*  onClick={() => setShow(true)} */}
+          
             <a href="">
               <img
                 className="image"
@@ -55,16 +55,17 @@ const Header = ({ setShow, size }) => {
             Search
           </button>
 
-          <span className="cart" onClick={() => setShow(false)}>
-            <Link to="/cart">
+          <span className="cart">
+            <Link to="/cart" >
             <Stack  direction="row">
                Cart
-              <span className="accicon">
+             
                 <FaCartArrowDown />
-              </span>
+             
+              {localStorage.getItem("ids").length ||null}
               </Stack>
             </Link>
-            <span>{size}</span>
+          
           </span>
           <span className="signin">
            <Stack  direction="row">
