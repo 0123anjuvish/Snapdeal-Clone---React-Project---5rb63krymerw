@@ -164,7 +164,7 @@ export default function AlignItemsList() {
                
               <Grid item xs={9} sx={{ height: "400px" }}>
               
-              {/* <Item sx={{ height: "300px" }}><Avatar src={img8} variant="square" sx={{height:306,width:710}}></Avatar></Item> */}
+              <Item sx={{ height: "300px" }}><Avatar src={img8} variant="square" sx={{height:350,width:710}}></Avatar></Item>
               </Grid>
               <Grid item xs={3} sx={{ height: "500px" }}>
                {/* // <Item sx={{ height: "400px", width: "100%" }}> */}

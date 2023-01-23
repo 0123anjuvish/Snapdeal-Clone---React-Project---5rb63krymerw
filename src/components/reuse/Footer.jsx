@@ -9,22 +9,21 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import  { useEffect, useState } from 'react';
 import Login from '../pages/Login';
-import img9 from "../../Images/c2.jpg";
-import img8 from "../../Images/ca1.jpg";
-//import imgr3 from '../../Images/WF.jpg';
-import img7 from '../../Images/mens.jpg';
-import imgr4 from '../../Images/H&K.jpg';
-import imgr7 from '../../Images/kids.jpg';
-import img6 from '../../Images/Beauty.jpg';
-//import imgr3 from "../../Images/girl.jpg";
-import img5 from '../../Images/kids.jpg';
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
+import pay from "../../Images/allp.png";
+import scl from "../../Images/scl.jpg";
+
+
+import imgr4 from '../../Images/tst.jpg';
+import sng from '../../Images/sng.png';
+import img6 from '../../Images/hc.png';
+
+import img5 from '../../Images/lock.png.png';
+
 import Divider from "@mui/material/Divider";
 
 import Avatar from "@mui/material/Avatar";
 
-import Paper from "@mui/material/Paper";
+
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 // import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
@@ -131,7 +130,7 @@ const Footer = ()=>{
             margin: "1em",
             marginLeft: "7em",
           }}
-         // image={imgr7}
+          image={sng}
         />
         <CardContent className="cardcontent">
           <Typography variant="body2" color="text.secondary">
@@ -203,19 +202,10 @@ const Footer = ()=>{
         <Stack direction="row" spacing={2}>
           <Avatar
             variant="square"
-          //  src={img9}
+            src={pay}
             sx={{ height: 60, width: "60%" }}
           ></Avatar>
-          <Avatar
-            sx={{ height: 75, width: 75 }}
-            variant="square"
-           // src={img10}
-          ></Avatar>
-          <Avatar
-            sx={{ height: 75, width: 75 }}
-            variant="square"
-           // src={img11}
-          ></Avatar>
+        
         </Stack>
       </Grid>
       <Grid item xs={7}>
@@ -223,7 +213,7 @@ const Footer = ()=>{
         <Avatar
           sx={{ height: 60, width: "60%" }}
           variant="square"
-         // src={img12}
+          src={scl}
         ></Avatar>
       </Grid>
     </Grid>

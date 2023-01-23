@@ -56,11 +56,12 @@ const Header = () => {
           </button>
 
           <span className="cart">
-            <Link to="/cart" >
-            <Stack  direction="row">
-               Cart
+            <Link to="/cart"  color="white">
+            <Stack  direction="row" spacing={7} color="white" fontWeight="500" font-family= "Roboto" sans-serif marginTop="0.9em" letter-spacing= "0.02857em"
+    text-transform= "uppercase" paddingLeft={1}>
+               CART 
              
-                <FaCartArrowDown />
+                <FaCartArrowDown  />
              
               {localStorage.getItem("ids").length ||null}
               </Stack>
