@@ -1,6 +1,6 @@
 import React from 'react'
 import '../styles/App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import Catalog from './pages/Catalog';
 
 import Product from './pages/Product';
@@ -15,7 +15,7 @@ const App = () => {
   
   return (
     <div id="main">
-      <BrowserRouter>
+      <HashRouter>
       <Header/>
     
       <Routes>
@@ -26,7 +26,7 @@ const App = () => {
       
        <Route exact path = "/account" element={<Account/>} > </Route>
       </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   )
 }
